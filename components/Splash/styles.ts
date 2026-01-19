@@ -4,9 +4,6 @@ import { colors } from '../../utils/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: colors.white,
     },
     content: {
@@ -35,8 +32,7 @@ export const styles = StyleSheet.create({
     },
     buttonContainer: {
         width: '100%',
-        flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'stretch',
         marginTop: 20,
     },
 });

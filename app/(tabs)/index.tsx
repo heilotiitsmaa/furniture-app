@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, Image, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { styles } from './styles';
+import { styles } from '../../styles/home.styles';
 import { useRouter } from 'expo-router';
 
 const Home = () => {

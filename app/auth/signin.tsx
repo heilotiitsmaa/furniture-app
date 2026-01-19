@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, Text, View, Pressable, Image } from 'react-native';
-import { styles } from './styles';
+import { styles } from '../../styles/auth.styles';
 import { useRouter } from 'expo-router';
 import Input from '../../components/Input';
 import Button from '../../components/Button';

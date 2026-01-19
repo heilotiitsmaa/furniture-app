@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { SafeAreaView, ScrollView, Text, Pressable, Image, View } from 'react-native';
-import { styles } from './styles';
+import { styles } from '../../styles/auth.styles';
 import { useRouter } from 'expo-router';
 import Input from '../../components/Input';
 import Checkbox from '../../components/Checkbox';

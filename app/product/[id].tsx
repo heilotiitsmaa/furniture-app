@@ -3,7 +3,7 @@ import { View, Text, Image, ScrollView, Pressable, Linking } from 'react-native'
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { styles } from './styles';
+import { styles } from '../../styles/product.styles';
 import Button from '../../components/Button';
 
 const ProductDetails = () => {

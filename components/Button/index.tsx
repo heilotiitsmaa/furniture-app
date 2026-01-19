@@ -13,10 +13,20 @@ const Button = ({ title, onPress, type, style }: ButtonProps) => {
         <TouchableOpacity 
             activeOpacity={0.6} 
             onPress={onPress} 
-            hitSlop={20} // nähtamatu 20px klikitav ala nupu ümber
-            style={[styles.container, style]} // Kombineerime stiilid siin
+            hitSlop={20}
+            // Lisame loogika: kui tüüp on secondary, paneb ka selle stiili juurde
+            style={[
+                styles.container, 
+                type === 'secondary' && styles.secondaryContainer, 
+                style
+            ]} 
         >
-            <Text style={styles.title}>{title}</Text>
+            <Text style={[
+                styles.title, 
+                type === 'secondary' && styles.secondaryTitle
+            ]}>
+                {title}
+            </Text>
         </TouchableOpacity>
     );
 };

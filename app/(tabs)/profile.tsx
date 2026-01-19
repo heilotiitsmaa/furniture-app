@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { styles } from './styles'; // Kasutame ühiseid tabide stiile
+import { styles } from '../../styles/home.styles'; // Kasutame ühiseid tabide stiile
 import { useRouter } from 'expo-router';
 
 const Profile = () => {
@@ -9,7 +9,7 @@ const Profile = () => {
 
     const onLogout = () => {
         // Suuname tagasi algusesse (Splash ekraanile)
-        router.replace('/'); 
+        router.replace('../../components/Splash/index');
     };
 
     return (

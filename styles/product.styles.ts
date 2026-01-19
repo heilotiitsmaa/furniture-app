@@ -1,8 +1,8 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 
 const { height } = Dimensions.get('window');
 
-export const styles = StyleSheet.create({
+export const productStyles = StyleSheet.create({ // Nimetasin 'styles' -> 'productStyles'
     safe: {
         flex: 1,
         backgroundColor: '#FFFFFF',
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: height * 0.45, // Pilt võtab 45% ekraani kõrgusest
+        height: height * 0.45,
     },
     backButton: {
         position: 'absolute',
@@ -24,11 +24,21 @@ export const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         padding: 10,
         borderRadius: 8,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
+        // --- VARJU PARANDUS SIIN ---
+        ...Platform.select({
+            ios: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.25,
+                shadowRadius: 3.84,
+            },
+            android: {
+                elevation: 5,
+            },
+            web: {
+                boxShadow: '0px 2px 3.84px rgba(0,0,0,0.25)',
+            }
+        }),
     },
     backIcon: {
         width: 20,
@@ -60,21 +70,21 @@ export const styles = StyleSheet.create({
     },
     footer: {
         padding: 24,
-        flexDirection: 'row', // Paneb nupud kõrvuti
+        flexDirection: 'row',
         alignItems: 'center',
         gap: 15,
     },
     markerButton: {
-    backgroundColor: '#F0F0F0',
-    padding: 15,
-    borderRadius: 8,
-},
-markerButtonActive: {
-    backgroundColor: '#4F63AC', // Muutub siniseks, kui on lemmik
-},
-markerIcon: {
-    width: 24,
-    height: 24,
-    tintColor: '#4F63AC',
-},
+        backgroundColor: '#F0F0F0',
+        padding: 15,
+        borderRadius: 8,
+    },
+    markerButtonActive: {
+        backgroundColor: '#4F63AC',
+    },
+    markerIcon: {
+        width: 24,
+        height: 24,
+        tintColor: '#4F63AC',
+    },
 });
