@@ -21,7 +21,7 @@ const Splash = () => {
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button title="Sign Up" onPress={() => router.push('/auth/signup')} />
-                    <Button title="Sign In" type="secondary" onPress={() => console.log('Sign In')} />
+                    <Button title="Sign In" type="secondary" onPress={() => router.push('/auth/signin')} />
                 </View>
             </View>
         </SafeAreaView>

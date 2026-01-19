@@ -1,30 +1,25 @@
-import { colors } from '../../utils/colors';
 import { StyleSheet } from 'react-native';
+import { colors } from '../../utils/colors';
 
 export const styles = StyleSheet.create({
     container: {
         marginBottom: 20,
-        width: '100%',
     },
     label: {
         marginBottom: 8,
-        color: colors.blue,
+        color: colors.blue, // Siltide värv disainis
         fontSize: 14,
         fontWeight: '500',
     },
     inputContainer: {
         borderWidth: 1,
-        borderColor: colors.grey,
+        borderColor: colors.grey, // Hall raam
         borderRadius: 14,
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: colors.white,
+        paddingHorizontal: 16,
     },
     input: {
-        paddingHorizontal: 16,
         paddingVertical: 16,
-        flex: 1,
-        color: colors.darkGrey,
         fontSize: 14,
+        color: colors.black,
     },
 });

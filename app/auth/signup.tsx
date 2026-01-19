@@ -1,22 +1,66 @@
-import React from 'react';
-import { Text, View, SafeAreaView, Pressable } from 'react-native';
+import React, {useState} from 'react';
+import { SafeAreaView, ScrollView, Text, Pressable, Image, View } from 'react-native';
+import { styles } from './styles';
 import { useRouter } from 'expo-router';
-import { styles } from './styles'; // Loome selle järgmise sammuna
-
+import Input from '../../components/Input';
+import Checkbox from '../../components/Checkbox';
+import Button from '../../components/Button';
 const SignUp = () => {
     const router = useRouter();
+    const [checked, setChecked] = useState(false); // Hoiab meeles, kas on valitud
+
+    const onBack = () => {
+        router.back(); // Viib kasutaja tagasi eelnevale lehele
+    };
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.content}>
-                <Text style={styles.title}>Sign Up</Text>
-                
-                {/* Siia tulevad hiljem Input komponendid */}
-                
-                <Pressable onPress={() => router.back()}>
-                    <Text style={styles.backText}>Go Back</Text>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {/* Tagasi nupp */}
+                <View style={styles.header}>
+                <Pressable hitSlop={20} onPress={onBack}>
+                    <Image 
+                        style={styles.backArrow} 
+                        source={require('../../assets/images/back.png')} // Veendu, et fail on olemas
+                    />
                 </Pressable>
-            </View>
+                {/* Siia tuleb tagasi-nool ja pealkiri vastavalt disainile */}
+                <Text style={styles.title}>Sign Up</Text>
+                </View>
+                
+                {/* Järgmiseks loome Input komponendid */}
+                <Input label="Name" placeholder="John Doe" />
+                <Input label="E-mail" placeholder="example@gmail.com" />
+                <Input label="Password" placeholder="********" isPassword={true} />
+                {/* Siia tulevad järgmiseks Checkbox ja nupud */}
+                <View style={styles.agreeRow}>
+                    <Checkbox checked={checked} onCheck={setChecked} />
+                    <Text style={styles.agreeText}>
+                        I agree with <Text style={styles.agreeTextBold}>Terms & Privacy</Text>
+                    </Text>
+                </View>
+                {/* Sign Up Nupp */}
+                <Button style={styles.button} title="Sign Up" />
+
+                {/* Eraldaja joontega */}
+                <View style={styles.separatorContainer}>
+                    <View style={styles.line} />
+                    <Text style={styles.separatorText}>Or sign up with</Text>
+                    <View style={styles.line} />
+                </View>
+
+                {/* Google nupp */}
+                <Pressable style={styles.googleButton}>
+                    <Image style={styles.googleIcon} source={require('../../assets/images/google.png')} />
+                </Pressable>
+
+                {/* Link sisselogimisele */}
+                <Text style={styles.footerText}>
+                    Already have an account? 
+                    <Text onPress={() => router.push('/auth/signin')} style={styles.footerLinkBold}> Sign In</Text>
+                </Text>
+
+            </ScrollView>
         </SafeAreaView>
     );
 };

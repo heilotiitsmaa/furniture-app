@@ -1,17 +1,16 @@
 import React from 'react';
-import { TextInput, Text, View } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { styles } from './styles';
 
-const Input = ({ label, placeholder, isPassword, ...props }) => {
+const Input = ({ label, placeholder, isPassword = false, ...props }: any) => {
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
             <View style={styles.inputContainer}>
                 <TextInput 
-                    secureTextEntry={isPassword}
                     placeholder={placeholder}
+                    secureTextEntry={isPassword} // Parooli varjamiseks
                     style={styles.input}
-                    placeholderTextColor="#8D9BB5"
                     {...props}
                 />
             </View>
