@@ -42,7 +42,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore" // Võid selle hiljem ümber nimetada "favorites.tsx"
+        name="favorites" // Võid selle hiljem ümber nimetada "favorites.tsx"
         options={{
           title: 'Favorites',
           tabBarIcon: ({ focused }) => (

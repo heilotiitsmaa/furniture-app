@@ -60,5 +60,21 @@ export const styles = StyleSheet.create({
     },
     footer: {
         padding: 24,
-    }
+        flexDirection: 'row', // Paneb nupud kõrvuti
+        alignItems: 'center',
+        gap: 15,
+    },
+    markerButton: {
+    backgroundColor: '#F0F0F0',
+    padding: 15,
+    borderRadius: 8,
+},
+markerButtonActive: {
+    backgroundColor: '#4F63AC', // Muutub siniseks, kui on lemmik
+},
+markerIcon: {
+    width: 24,
+    height: 24,
+    tintColor: '#4F63AC',
+},
 });
