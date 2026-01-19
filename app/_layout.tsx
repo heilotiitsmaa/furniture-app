@@ -1,24 +1,16 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import React from 'react';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    // Expo Routeri Stack teab ise, et on konteineri sees
+    <Stack screenOptions={{ headerShown: false }}>
+      {/* index vastab failile app/index.tsx (Splash) */}
+      <Stack.Screen name="index" /> 
+      {/* auth/signup vastab failile app/auth/signup.tsx */}
+      <Stack.Screen name="auth/signup" />
+      {/* auth/signin vastab failile app/auth/signin.tsx */}
+      <Stack.Screen name="auth/signin" />
+    </Stack>
   );
 }

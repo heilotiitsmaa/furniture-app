@@ -7,10 +7,12 @@ import Checkbox from '../../components/Checkbox';
 import Button from '../../components/Button';
 const SignUp = () => {
     const router = useRouter();
-    const [checked, setChecked] = useState(false); // Hoiab meeles, kas on valitud
-
-    const onBack = () => {
-        router.back(); // Viib kasutaja tagasi eelnevale lehele
+    const [checked, setChecked] = useState(false);
+        const onBack = () => {
+        router.back();
+    };
+    const handleSignUp = () => {
+        router.replace('/(tabs)');
     };
 
     return (
@@ -40,7 +42,7 @@ const SignUp = () => {
                     </Text>
                 </View>
                 {/* Sign Up Nupp */}
-                <Button style={styles.button} title="Sign Up" />
+                <Button title="Sign Up" onPress={handleSignUp} />
 
                 {/* Eraldaja joontega */}
                 <View style={styles.separatorContainer}>

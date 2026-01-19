@@ -8,6 +8,11 @@ import Button from '../../components/Button';
 const SignIn = () => {
     const router = useRouter();
 
+    const handleSignIn = () => {
+        // Siia tuleks tulevikus päris kontroll, hetkel lihtsalt suuname
+        router.replace('/(tabs)'); // replace eemaldab sisselogimise lehe ajaloost
+    };
+
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -21,7 +26,7 @@ const SignIn = () => {
                 <Input label="E-mail" placeholder="example@gmail.com" />
                 <Input label="Password" placeholder="********" isPassword={true} />
 
-                <Button style={styles.button} title="Sign In" onPress={() => console.log('Logi sisse')} />
+                <Button title="Sign In" onPress={handleSignIn} />
 
                 <View style={styles.separatorContainer}>
                     <View style={styles.line} />
