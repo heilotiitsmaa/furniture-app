@@ -1,3 +1,4 @@
+import { colors } from '../../utils/colors';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -7,23 +8,23 @@ export const styles = StyleSheet.create({
     },
     label: {
         marginBottom: 8,
-        color: '#4F63AC',
+        color: colors.blue,
         fontSize: 14,
         fontWeight: '500',
     },
     inputContainer: {
         borderWidth: 1,
-        borderColor: '#8D9BB5',
+        borderColor: colors.grey,
         borderRadius: 14,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: colors.white,
     },
     input: {
         paddingHorizontal: 16,
         paddingVertical: 16,
         flex: 1,
-        color: '#303030',
+        color: colors.darkGrey,
         fontSize: 14,
     },
 });

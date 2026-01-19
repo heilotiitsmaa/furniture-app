@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../utils/colors';
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#4F63AC',
-        paddingVertical: 16,
+        backgroundColor: colors.blue,
+        paddingVertical: 20,
         paddingHorizontal: 8,
         borderRadius: 8,
         width: '100%',
@@ -13,12 +14,12 @@ export const styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     title: {
-        color: '#FFFFFF',
+        color: colors.white,
         fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
     },
     secondaryTitle: {
-        color: '#4F63AC',
+        color: colors.blue,
     },
 });
